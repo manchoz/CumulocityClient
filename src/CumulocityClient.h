@@ -12,7 +12,7 @@
 #include "Arduino.h"
 #include <PubSubClient.h>
 
-#if defined(ESP8266) || defined(ESP32)
+#if __has_include(<functional>)
 #include <functional>
 #define C8Y_CALLBACK_SIGNATURE std::function<int(char* templateCode, char* content)> callback
 #else
